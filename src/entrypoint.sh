@@ -6,29 +6,29 @@ export MT5_SERVER=${MT5_SERVER:?variable MT5_SERVER not defined}
 
 /dockerstartup/vnc_startup.sh &
 
-wine '/headless/.wine/drive_c/Program Files/MetaTrader 5/terminal64.exe' &
+wine '/headless/.wine/drive_c/Program Files/MetaTrader 5 Strategy Tester/MetaTester64.exe' &
 
 while :
 do
 
 sleep 5
 
-if [ "$(iconv -f utf-16 -t utf-8 '/headless/.wine/drive_c/Program Files/MetaTrader 5/Config/common.ini' | grep $MT5_LOGIN)" ]; then break ; else echo 'not connected yet'; fi
+if [ "$(iconv -f utf-16 -t utf-8 '/headless/.wine/drive_c/Program Files/MetaTrader 5 Strategy Tester/Tester/Manager/common.ini' | grep $MT5_LOGIN)" ]; then break ; else echo 'not connected yet'; fi
 
 sleep 5
 
-xdotool key Alt+F+L
-xdotool key Ctrl+A
-xdotool type $MT5_LOGIN
-xdotool key Tab
-xdotool key Ctrl+A
-xdotool type $MT5_PASSWORD
-xdotool key Tab
-xdotool key Tab
-xdotool key Ctrl+A
-xdotool type $MT5_SERVER
-xdotool key Tab
-xdotool key Return
+# xdotool key Alt+F+L
+# xdotool key Ctrl+A
+# xdotool type $MT5_LOGIN
+# xdotool key Tab
+# xdotool key Ctrl+A
+# xdotool type $MT5_PASSWORD
+# xdotool key Tab
+# xdotool key Tab
+# xdotool key Ctrl+A
+# xdotool type $MT5_SERVER
+# xdotool key Tab
+# xdotool key Return
 
 done
 
