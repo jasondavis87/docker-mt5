@@ -25,7 +25,7 @@ apt-get update &&\
 apt-get install --install-recommends -y winehq-staging
 RUN \
 wget https://www.python.org/ftp/python/3.7.4/python-3.7.4.exe &&\
-wget https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5setup.exe
+wget https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5tester.setup.exe?utm_source=www.mql5.com&utm_campaign=download
 RUN \
 apt install -y xvfb
 ENV DISPLAY=:1
